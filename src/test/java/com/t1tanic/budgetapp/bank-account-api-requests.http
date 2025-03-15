@@ -1,0 +1,13 @@
+### Add a Bank Account (User ID in URL)
+POST http://localhost:8080/bank-accounts/1
+Content-Type: application/json
+
+{
+  "bankName": "Santander",
+  "accountNumber": "123456789",
+  "iban": "ES9121000418450200051332",
+  "balance": 5000.00
+}
+
+### Get All Bank Accounts for a User
+GET http://localhost:8080/bank-accounts/1
