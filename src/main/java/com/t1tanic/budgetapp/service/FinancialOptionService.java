@@ -4,6 +4,9 @@ import com.t1tanic.budgetapp.model.FinancialOption;
 
 import java.util.List;
 
+/**
+ * Service for managing user financial options.
+ */
 public interface FinancialOptionService {
     /**
      * Associates a new financial option with a user.

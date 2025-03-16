@@ -5,6 +5,9 @@ import com.t1tanic.budgetapp.model.BankAccount;
 
 import java.util.List;
 
+/**
+ * Service for managing user bank accounts.
+ */
 public interface BankAccountService {
     /**
      * Associates a new bank account with a user.

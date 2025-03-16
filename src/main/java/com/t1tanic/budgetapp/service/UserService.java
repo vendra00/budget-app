@@ -4,6 +4,9 @@ import com.t1tanic.budgetapp.model.User;
 
 import java.util.Optional;
 
+/**
+ * Service for managing user accounts.
+ */
 public interface UserService {
 
     /**
