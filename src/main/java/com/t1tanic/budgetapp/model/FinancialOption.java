@@ -8,6 +8,8 @@ import lombok.Setter;
 
 @Entity
 @Table(name = "financial_options")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,11 +19,10 @@ public class FinancialOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private FinancialType type; // BANK_ACCOUNT, INVESTMENT, EXPENSE
-
     private String name;
+
+    @Column(nullable = false)
     private double balance;
 
     @ManyToOne

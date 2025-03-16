@@ -3,11 +3,26 @@ POST http://localhost:8080/bank-accounts/1
 Content-Type: application/json
 
 {
-  "bankName": "Santander",
+  "type": "BANK_ACCOUNT",
+  "name": "Santander Personal Account",
+  "balance": 5000.00,
   "accountNumber": "123456789",
-  "iban": "ES9121000418450200051332",
-  "balance": 5000.00
+  "iban": "ES9121000418450200051332"
 }
 
 ### Get All Bank Accounts for a User
 GET http://localhost:8080/bank-accounts/1
+
+### Update a Bank Account
+PUT http://localhost:8080/bank-accounts/1/1
+Content-Type: application/json
+
+{
+  "name": "Santander Updated Account",
+  "balance": 6000.00,
+  "accountNumber": "987654321",
+  "iban": "ES9121000418450200051332"
+}
+
+### Delete a Bank Account
+DELETE http://localhost:8080/bank-accounts/1/1

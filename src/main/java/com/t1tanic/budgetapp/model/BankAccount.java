@@ -2,24 +2,15 @@ package com.t1tanic.budgetapp.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
-@Table(name = "bank_accounts")
+@DiscriminatorValue("BANK_ACCOUNT")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BankAccount {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @NotBlank
-    @Column(nullable = false)
-    private String bankName;
+public class BankAccount extends FinancialOption {
 
     @NotBlank
     @Column(unique = true, nullable = false)
@@ -29,11 +20,9 @@ public class BankAccount {
     @Column(unique = true, nullable = false)
     private String iban;
 
-    @NotNull
-    @Column(nullable = false)
-    private Double balance;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    public BankAccount(String name, double balance, User user, String accountNumber, String iban) {
+        super(null, name, balance, user);
+        this.accountNumber = accountNumber;
+        this.iban = iban;
+    }
 }
