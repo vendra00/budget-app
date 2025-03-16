@@ -28,12 +28,11 @@ public class BankAccountServiceImpl implements BankAccountService {
     @Override
     public BankAccount addBankAccount(Long userId, BankAccount bankAccount) {
         log.info("Adding Bank Account");
-        Optional<User> user = userRepository.findById(userId);
-        if (user.isPresent()) {
-            bankAccount.setUser(user.get());
-            return bankAccountRepository.save(bankAccount);  // ✅ No need to manually set type anymore!
-        }
-        throw new IllegalArgumentException("User not found");
+
+        User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        bankAccount.setUser(user);
+        return bankAccountRepository.save(bankAccount);
     }
 
     @Override

@@ -1,0 +1,30 @@
+### Add an Investment (User ID in URL)
+POST http://localhost:8080/investments/1
+Content-Type: application/json
+
+{
+  "name": "Bitcoin",
+  "balance": 5000.00,
+  "category": "CRYPTO",
+  "units": 0.1,
+  "pricePerUnit": 50000.00
+}
+
+### Get All Investments for a User
+GET http://localhost:8080/investments/1
+
+### Update an Investment
+PUT http://localhost:8080/investments/1/2
+Content-Type: application/json
+
+{
+  "name": "Ethereum",
+  "balance": 3000.00,
+  "category": "CRYPTO",
+  "units": 2,
+  "pricePerUnit": 1500.00
+}
+
+
+### Delete an Investment
+DELETE http://localhost:8080/investments/1

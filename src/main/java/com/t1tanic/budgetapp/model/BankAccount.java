@@ -1,23 +1,20 @@
 package com.t1tanic.budgetapp.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Entity
-@DiscriminatorValue("BANK_ACCOUNT")
+@Table(name = "bank_accounts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class BankAccount extends FinancialOption {
 
-    @NotBlank
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true)
     private String accountNumber;
 
-    @NotBlank
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false, unique = true)
     private String iban;
 
     public BankAccount(String name, double balance, User user, String accountNumber, String iban) {
