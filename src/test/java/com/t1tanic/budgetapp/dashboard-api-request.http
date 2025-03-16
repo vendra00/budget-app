@@ -1,0 +1,7 @@
+### Get User Dashboard (User ID: 1)
+GET http://localhost:8080/dashboard/1
+Accept: application/json
+
+### Get Financial History Dashboard (User ID: 1)
+GET http://localhost:8080/dashboard/1/history
+Accept: application/json
