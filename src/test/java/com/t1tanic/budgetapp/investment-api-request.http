@@ -28,3 +28,20 @@ Content-Type: application/json
 
 ### Delete an Investment
 DELETE http://localhost:8080/investments/1
+
+
+### Create a new transaction (Stock Buy)
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "type": "STOCK_BUY",
+  "amount": 500.00,
+  "description": "Buying Apple stocks",
+  "financialOptionId": 2,
+  "recipientOrStockSymbol": "AAPL",
+  "quantity": 5
+}
+
+### Get all transactions
+GET http://localhost:8080/transactions

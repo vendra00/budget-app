@@ -26,3 +26,35 @@ Content-Type: application/json
 
 ### Delete a Bank Account
 DELETE http://localhost:8080/bank-accounts/1/1
+
+### Create a new transaction (Bank Transfer)
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "type": "BANK_TRANSFER",
+  "amount": 100.00,
+  "description": "Payment for services",
+  "financialOptionId": 1,
+  "recipientOrStockSymbol": "123456789"
+}
+
+
+### Create a new transaction (Stock Buy)
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "type": "STOCK_BUY",
+  "amount": 500.00,
+  "description": "Buying Apple stocks",
+  "financialOptionId": 2,
+  "recipientOrStockSymbol": "AAPL",
+  "quantity": 5
+}
+
+### Get all transactions
+GET http://localhost:8080/transactions
+
+### Get transactions for a specific financial option (Bank Account ID: 1)
+GET http://localhost:8080/transactions/1

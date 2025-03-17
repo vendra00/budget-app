@@ -18,7 +18,7 @@ public class BankAccount extends FinancialOption {
     private String iban;
 
     public BankAccount(String name, double balance, User user, String accountNumber, String iban) {
-        super(null, name, balance, user);
+        super(name, balance, user);
         this.accountNumber = accountNumber;
         this.iban = iban;
     }

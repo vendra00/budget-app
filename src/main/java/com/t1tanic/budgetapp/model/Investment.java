@@ -25,7 +25,7 @@ public class Investment extends FinancialOption {
     private double pricePerUnit; // Purchase price per unit
 
     public Investment(String name, double balance, User user, InvestmentCategory category, double pricePerUnit, double units) {
-        super(null, name, balance, user);
+        super(name, balance, user);
         this.category = category;
         this.pricePerUnit = pricePerUnit;
         this.units = units;
